@@ -1,14 +1,15 @@
 logging.level.reactor.netty.http.client: DEBUG
+server.servlet.context-path: /sentinel
 
 ################################################ qa properties start ###########################################
 ################################################ qa properties start ###########################################
 ################################################ qa properties start ###########################################
-oauthUrl: "http://10.216.204.90:9000"
+sentinel.oauthUrl: "http://10.216.204.90:9000"
 ---
 spring.profiles: qa
 
-graylogHost: local.monsterlocal.com
-graylogPort: 9000
+sentinel.graylogHost: local.monsterlocal.com
+sentinel.graylogPort: 9000
 
 ################################################ qa properties end ###########################################
 ################################################ qa properties end ###########################################
@@ -23,8 +24,8 @@ graylogPort: 9000
 ---
 spring.profiles: rfs
 
-graylogHost: local.monsterlocal.com
-graylogPort: 9001
+sentinel.graylogHost: local.monsterlocal.com
+sentinel.graylogPort: 9001
 
 
 ################################################ rfs properties end #############################################
@@ -38,12 +39,11 @@ graylogPort: 9001
 ---
 spring.profiles: production
 
-graylogHost: local.monsterlocal.com
-graylogPort: 9002
+sentinel.graylogHost: local.monsterlocal.com
+sentinel.graylogPort: 9002
 
 
 ################################################ production properties end #############################################
 ################################################ production properties end #############################################
 ################################################ production properties end #############################################
 
-server.servlet.context-path: /sentinel
