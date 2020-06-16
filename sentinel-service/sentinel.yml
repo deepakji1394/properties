@@ -24,7 +24,7 @@ sentinel.graylogPort: 9000
 spring.profiles: rfs
 
 sentinel.graylogHost: local.monsterlocal.com
-sentinel.graylogPort: 9000
+sentinel.graylogPort: 9001
 
 
 ################################################ rfs properties end #############################################
@@ -39,7 +39,7 @@ sentinel.graylogPort: 9000
 spring.profiles: production
 
 sentinel.graylogHost: local.monsterlocal.com
-sentinel.graylogPort: 9000
+sentinel.graylogPort: 9002
 
 
 ################################################ production properties end #############################################
