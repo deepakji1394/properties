@@ -9,7 +9,7 @@ sentinel.oauthUrl: "http://10.216.204.90:9000"
 spring.profiles: qa
 
 sentinel.graylogHost: local.monsterlocal.com
-sentinel.graylogPort: 9000
+sentinel.graylogPort: 8000
 
 ################################################ qa properties end ###########################################
 ################################################ qa properties end ###########################################
