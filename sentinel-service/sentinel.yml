@@ -1,15 +1,66 @@
-logging.level.reactor.netty.http.client: DEBUG
 server.servlet.context-path: /sentinel
+logging.level.reactor.netty.http.client: DEBUG
+
+spring.jackson.default-property-inclusion: NON_NULL
+spring.jpa.hibernate.ddl-auto: validate
+hibernate.dialect: org.hibernate.dialect.MariaDB103Dialect
+
+# Spring Data - MySQL
+# sailfish data-source configurations
+sailfish.data-source.jdbcUrl: jdbc:mysql://10.216.240.167:3306/sailfish?zeroDateTimeBehavior=convertToNull
+sailfish.data-source.username: marlin
+sailfish.data-source.password: Marlin@321#
+sailfish.data-source.databaseName: sailfish
+sailfish.data-source.driverClassName: com.mysql.jdbc.Driver
+sailfish.data-source.hibernate.dialect: org.hibernate.dialect.MariaDB103Dialect
+sailfish.data-source.type: com.zaxxer.hikari.HikariDataSource
+sailfish.data-source.autoCommit: false
+sailfish.data-source.generateUniqueName: false
+#data-source timeouts
+#sailfish.data-source.minimumIdle: 50
+sailfish.data-source.maximumPoolSize: 100
+#sailfish.data-source.idleTimeout: 30000
+#sailfish.data-source.maxLifetime: 2000000
+#sailfish.data-source.connectionTimeout: 5000
+sailfish.data-source.leakDetectionThreshold: 500
+sailfish.data-source.max-lifetime: 1000
+#data-source and pool names
+sailfish.data-source.name: sailfish-datasource
+sailfish.data-source.poolName: sailfish-pool
+
 
 ################################################ qa properties start ###########################################
 ################################################ qa properties start ###########################################
 ################################################ qa properties start ###########################################
 sentinel.oauthUrl: "http://10.216.204.90:9000"
+sentinel.domainSiteContextConfig: "{\"localhost\":\"rexmonster\" , \"rec-dev.monsterindia.com\":\"rexmonster\"}"
+sentinel.actuatorEndpointsUser: deepak
+sentinel.actuatorEndpointsUserPassword: deepak
+
+
+################################################ development properties start #############################################
+################################################ development properties start #############################################
+################################################ development properties start #############################################
+
+spring.profiles: development
+
+sentinel.graylogHost: 10.216.240.128
+sentinel.graylogPort: 6066
+
+################################################ development properties end ###########################################
+################################################ development properties end ###########################################
+################################################ development properties end ###########################################
+
+
+################################################ qa properties start #############################################
+################################################ qa properties start #############################################
+################################################ qa properties start #############################################
+
 ---
 spring.profiles: qa
 
-sentinel.graylogHost: local.monsterlocal.com
-sentinel.graylogPort: 8000
+sentinel.graylogHost: 10.216.240.128
+sentinel.graylogPort: 6066
 
 ################################################ qa properties end ###########################################
 ################################################ qa properties end ###########################################
@@ -24,8 +75,8 @@ sentinel.graylogPort: 8000
 ---
 spring.profiles: rfs
 
-sentinel.graylogHost: local.monsterlocal.com
-sentinel.graylogPort: 9001
+sentinel.graylogHost: ${GRAYLOG_HOST}
+sentinel.graylogPort: ${GRAYLOG_PORT}
 
 
 ################################################ rfs properties end #############################################
@@ -39,11 +90,10 @@ sentinel.graylogPort: 9001
 ---
 spring.profiles: production
 
-sentinel.graylogHost: local.monsterlocal.com
-sentinel.graylogPort: 9002
+sentinel.graylogHost: ${GRAYLOG_HOST}
+sentinel.graylogPort: ${GRAYLOG_PORT}
 
 
 ################################################ production properties end #############################################
 ################################################ production properties end #############################################
 ################################################ production properties end #############################################
-
